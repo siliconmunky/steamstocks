@@ -1,0 +1,48 @@
+html {
+    background: rgb(44, 52, 77);
+    -webkit-font-smoothing: antialiased;
+}
+
+body, main, header {
+    padding-top: 30px;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.06);
+    background: rgb(44, 52, 77);
+    color: #d2e0e7;
+    font-family: "Motiva Sans", sans-serif;
+}
+
+h1 {
+    font-size: 26px;
+    color: #67c1f5;
+}
+
+
+
+commented_img {
+    animation: colorize 1s cubic-bezier(0, 0, .78, .36) 1;
+    background: transparent;
+    border: 10px solid rgba(0, 0, 0, 0.12);
+    border-radius: 4px;
+    display: block;
+    margin: 1.3em auto;
+    max-width: 95%;
+}
+
+@keyframes colorize {
+    0% {
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
+    }
+    100% {
+        -webkit-filter: grayscale(0%);
+        filter: grayscale(0%);
+    }
+}
+
+.delta_pos {
+    color: #0fe00f;
+}
+
+.delta_neg {
+    color: #f71010;
+}

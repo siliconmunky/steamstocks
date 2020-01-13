@@ -1,0 +1,13 @@
+{{ define "content" }}
+<main role="main" class="container">
+  <div class="starter-template2">
+    Welcome to steamstocks - {{.ActiveListings}} active listings with {{.ActivePlayers}} players - Last refresh at {{.LastUpdated}} took {{.RefreshDuration}}
+  </div>
+  <br>
+  <table style="width:100%">
+    {{range .AppTable}}
+      <tr><td><a class="link" href="/{{.AppID}}">{{.GameName}}</a></td><td>{{.Price}}</td><td class="{{.DeltaStyle}}">{{.PriceDelta}}</td></tr>
+    {{end}}
+  </table>
+</main>
+{{ end }}

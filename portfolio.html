@@ -1,0 +1,30 @@
+{{ define "content" }}
+<main role="main" class="container">
+  <div class="starter-template2">
+	<img src="{{.UserIcon}}" height="64" width="64"><br>
+	User: {{.UserName}}<br>
+    Portfolio value: {{.PortfolioValue}}<br><br>
+    Cash: {{.PlayerCash}}<br><br>
+    
+    Stocks:<br>
+    <table style="width:100%">
+        <td>Game</td>
+        <td>Share Price</td>
+        <td>Num Owned</td>
+        <td>Unit Cost</td>
+        <td>Total Cost</td>
+        <td>Market Value</td>
+        {{range .StockTable}}
+          <tr>
+            <td><a class="link" href="/{{.AppID}}">{{.GameName}}</a></td>
+            <td>{{.Price}}</td>
+            <td>{{.StockOwned}}</td>
+            <td>{{.UnitCost}}</td>
+            <td>{{.TotalCost}}</td>
+            <td>{{.OwnedValue}}</td>
+          </tr>
+        {{end}}
+    </table>
+  </div>
+</main>
+{{ end }}

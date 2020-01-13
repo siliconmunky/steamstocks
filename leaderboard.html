@@ -1,0 +1,14 @@
+{{ define "content" }}
+<main role="main" class="container">
+  <table style="width:100%">
+    {{range .UserTable}}
+      <tr>
+        <td>{{.Place}}</td>
+        <td><img src="{{.Icon}}" height="32" width="32"></td>
+        <td><a class="link" href="portfolio/{{.SteamID}}">{{.SteamName}}</a></td>
+        <td>{{.PortfolioValue}}</td>
+      </tr>
+    {{end}}
+  </table>
+</main>
+{{ end }}

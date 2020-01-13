@@ -1,0 +1,29 @@
+{{ define "content" }}
+<main role="main" class="container">
+  <div class="starter-template2">
+    <a class="link" href="http://steamcharts.com/app/{{.AppID}}">{{.GameName}}</a><br>
+    {{.StockPrice}}<br>
+	<br>
+	Last Delta: {{.PriceDelta}}<br>
+	24 hour Hi: {{.Hi24Hour}}<br>
+	24 hour Lo: {{.Lo24Hour}}<br>
+	<br>	
+    Owned: {{.StockOwned}}<br>
+    Unit Cost: {{.UnitCost}}<br>
+    Cash: {{.PlayerCash}}<br>
+	<br>
+
+    <form action="/buy" method="post">
+      <input type="hidden" name="appid" value="{{.AppID}}">
+      <input type="submit" value="Buy"> Amount: <input type="number" name="amount">
+    </form>
+	
+	<form action="/requestrefresh" method="post">
+      <input type="hidden" name="appid" value="{{.AppID}}">
+      <input type="submit" value="Request Refresh">
+    </form>
+  </div>
+</main>
+{{ end }}
+
+    
