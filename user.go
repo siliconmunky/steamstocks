@@ -5,6 +5,7 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
+	"os"
 	"sort"
 	"sync"
 )
@@ -68,6 +69,12 @@ var userMapMutex sync.RWMutex
 
 func InitPlayers() {
 	userMap = make(map[string]UserData)
+
+	//Create directory if it doesn't exist
+	err := os.MkdirAll("save/players", os.ModePerm)
+	if err != nil {
+		log.Fatal(err)
+	}
 
 	//Load all players from disk
 	files, err := ioutil.ReadDir("save/players")
